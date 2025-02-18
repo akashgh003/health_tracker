@@ -69,7 +69,6 @@ export class WorkoutFormComponent implements OnInit {
         this.formErrors = result.errors || ['Failed to add workout'];
       }
     } else {
-      // Mark all fields as touched to trigger validation messages
       Object.keys(this.workoutForm.controls).forEach(key => {
         const control = this.workoutForm.get(key);
         control?.markAsTouched();

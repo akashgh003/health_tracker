@@ -1,8 +1,6 @@
-<!-- Main Content -->
 <div [style.background-color]="isDarkTheme ? '#1a1a1a' : '#ffffff'"
      style="padding: 40px 80px; min-height: calc(100vh - 80px);">
     <div style="display: flex; gap: 24px; max-width: 100%; margin: 0 auto;">
-      <!-- Users List Card -->
       <div [style.background-color]="isDarkTheme ? '#242424' : '#ffffff'"
            style="width: 320px; border-radius: 24px; padding: 24px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);">
         <h3 [style.color]="isDarkTheme ? '#ffffff' : '#111827'"
@@ -18,7 +16,6 @@
         </div>
       </div>
   
-      <!-- Workout Progress Card -->
       <div [style.background-color]="isDarkTheme ? '#242424' : '#ffffff'"
            style="flex: 1; border-radius: 24px; padding: 24px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);">
         <div *ngIf="selectedUser">
@@ -28,7 +25,6 @@
               {{selectedUser.name}}'s workout progress
             </h2>
             
-            <!-- Toggle Switch -->
             <label class="switch" style="position: relative; display: inline-block; width: 60px; height: 34px;">
               <input type="checkbox" 
                      [checked]="showCircularStats"
@@ -46,15 +42,12 @@
             </label>
           </div>
   
-          <!-- Chart Container -->
           <div style="height: 450px; width: 100%; margin-top: 20px;">
-            <!-- Bar Chart -->
             <div *ngIf="!showCircularStats" style="height: 100%; width: 100%;"
                  [style.color]="isDarkTheme ? '#ffffff' : '#111827'">
               <canvas #workoutChart style="width: 100%; height: 100%;"></canvas>
             </div>
   
-            <!-- Circular Progress -->
             <div *ngIf="showCircularStats" 
                  style="display: flex; justify-content: center; align-items: center; height: 100%;">
               <div style="position: relative; width: 300px; height: 300px;">
@@ -81,7 +74,6 @@
           </div>
         </div>
   
-        <!-- No Selection Message -->
         <div *ngIf="!selectedUser" 
              [style.color]="isDarkTheme ? '#9CA3AF' : '#6B7280'"
              style="text-align: center; padding: 40px;">

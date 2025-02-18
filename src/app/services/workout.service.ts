@@ -81,7 +81,6 @@ export class WorkoutService {
     return { success: true };
   }
 
-  // Added missing methods for stats-view component
   getProgressPercentage(user: User): number {
     if (!user || !user.workouts.length) return 0;
     const totalMinutes = this.getTotalMinutes(user);

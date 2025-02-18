@@ -105,14 +105,12 @@ describe('WorkoutFormComponent', () => {
     });
 
     it('should reset form after successful submission', () => {
-      // Setup initial form values
       component.workoutForm.patchValue({
         userName: 'John',
         workoutType: 'Running',
         workoutMinutes: 30
       });
       
-      // Submit form and reset
       component.onSubmit();
       component.workoutForm.reset({
         userName: '',
@@ -120,7 +118,6 @@ describe('WorkoutFormComponent', () => {
         workoutMinutes: ''
       });
       
-      // Verify form values
       expect(component.workoutForm.get('userName')?.value).toBe('');
       expect(component.workoutForm.get('workoutType')?.value).toBe('');
       expect(component.workoutForm.get('workoutMinutes')?.value).toBe('');

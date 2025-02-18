@@ -102,8 +102,8 @@ export class StatsViewComponent implements OnInit, OnDestroy {
     if (!ctx) return;
 
     const data = this.workoutService.processWorkoutData(this.selectedUser);
-    const textColor = '#111827'; // Always black text
-    const gridColor = 'rgba(0, 0, 0, 0.1)'; // Always black grid lines
+    const textColor = '#111827'; 
+    const gridColor = 'rgba(0, 0, 0, 0.1)'; 
 
     this.chart = new Chart(ctx, {
       type: 'bar',
@@ -111,8 +111,8 @@ export class StatsViewComponent implements OnInit, OnDestroy {
         labels: data.labels,
         datasets: [{
           label: 'Minutes',
-          data: data.data, // Changed from data.minutes to data.data
-          backgroundColor: 'rgba(59, 130, 246, 0.8)', // Keep blue bars
+          data: data.data, 
+          backgroundColor: 'rgba(59, 130, 246, 0.8)', 
           borderWidth: 0
         }]
       },
@@ -157,11 +157,11 @@ export class StatsViewComponent implements OnInit, OnDestroy {
   private updateChartColors(): void {
     if (!this.chart) return;
 
-    const textColor = '#111827'; // Always black text
-    const gridColor = 'rgba(0, 0, 0, 0.1)'; // Always black grid lines
+    const textColor = '#111827'; 
+    const gridColor = 'rgba(0, 0, 0, 0.1)'; 
 
     if (this.chart.data.datasets[0]) {
-      this.chart.data.datasets[0].backgroundColor = 'rgba(59, 130, 246, 0.8)'; // Keep blue bars
+      this.chart.data.datasets[0].backgroundColor = 'rgba(59, 130, 246, 0.8)'; 
     }
 
     if (this.chart.options.scales) {

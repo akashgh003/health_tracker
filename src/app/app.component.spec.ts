@@ -31,7 +31,6 @@ describe('AppComponent', () => {
       users$: new BehaviorSubject([])
     });
 
-    // Add mock implementations
     workoutServiceSpy.getFilteredUsers.and.returnValue([]);
     workoutServiceSpy.getWorkoutTypes.and.returnValue('');
     workoutServiceSpy.getTotalMinutes.and.returnValue(0);
