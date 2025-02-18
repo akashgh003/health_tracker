@@ -1,0 +1,174 @@
+.form-field {
+    background-color: #f3f4f6;
+    padding: 20px;
+    border-radius: 4px;
+    flex: 1;
+  
+    input, select {
+      width: 100%;
+      border: none;
+      background: none;
+      outline: none;
+      font-size: 16px;
+      color: #111827;
+      border-bottom: 1px solid #E5E7EB;
+
+      option {
+        background-color: #f3f4f6;
+        color: #111827;
+      }
+    }
+  }
+  
+  .card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+  
+      th, td {
+        text-align: left;
+        padding: 20px;
+        border-bottom: 1px solid #E5E7EB;
+      }
+  
+      th {
+        font-weight: 500;
+        color: #111827;
+      }
+  
+      td {
+        color: #6B7280;
+      }
+    }
+  }
+  
+  .delete-btn {
+    background: none;
+    border: none;
+    color: #EF4444;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: rgba(239, 68, 68, 0.1);
+    }
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+  
+    .page-btn {
+      padding: 8px 16px;
+      border: 1px solid #E5E7EB;
+      background: white;
+      color: #6B7280;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  
+      &:hover:not(:disabled) {
+        border-color: #2563EB;
+        color: #2563EB;
+      }
+  
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+  
+      &.active {
+        border-color: #2563EB;
+        color: #2563EB;
+      }
+    }
+  }
+  
+  .items-per-page {
+    margin-left: 20px;
+    color: #6B7280;
+  
+    select {
+      margin-left: 8px;
+      padding: 8px;
+      border: 1px solid #E5E7EB;
+      border-radius: 4px;
+      color: #6B7280;
+      background-color: white;
+
+      option {
+        background-color: white;
+        color: #6B7280;
+      }
+    }
+  }
+  
+  .empty-message {
+    text-align: center;
+    color: #6B7280;
+  }
+  
+  :host-context(.dark-mode) {
+    .form-field {
+      background-color: #2d2d2d;
+  
+      input, select {
+        color: white;
+        border-bottom-color: #4B5563;
+
+        option {
+          background-color: #2d2d2d;
+          color: #6B7280;  
+        }
+      }
+    }
+  
+    .card {
+      background: #2d2d2d;
+  
+      table {
+        th {
+          color: white;
+        }
+  
+        td {
+          color: #9CA3AF;
+          border-bottom-color: #4B5563;
+        }
+      }
+    }
+  
+    .page-btn {
+      background: #2d2d2d;
+      border-color: #4B5563;
+      color: #9CA3AF;
+  
+      &.active {
+        border-color: #3B82F6;
+        color: #3B82F6;
+      }
+    }
+
+    .items-per-page {
+      select {
+        background-color: #2d2d2d;
+        border-color: #4B5563;
+        color: #9CA3AF;
+
+        option {
+          background-color: #2d2d2d;
+          color: #6B7280;  
+        }
+      }
+    }
+  }

@@ -1,0 +1,58 @@
+<div class="form-container">
+    <h2>Add New Workout</h2>
+    
+    <form [formGroup]="workoutForm" (ngSubmit)="onSubmit()">
+      <div class="form-field">
+        <label>User Name*</label>
+        <input type="text" 
+               formControlName="userName" 
+               placeholder="Smith"
+               [ngClass]="{'error': workoutForm.get('userName')?.invalid && workoutForm.get('userName')?.touched}">
+        <div class="error-message" 
+             *ngIf="workoutForm.get('userName')?.invalid && workoutForm.get('userName')?.touched">
+          <span *ngIf="workoutForm.get('userName')?.errors?.['required']">Username is required</span>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-field">
+          <label>Workout Type*</label>
+          <select formControlName="workoutType"
+                  [ngClass]="{'error': workoutForm.get('workoutType')?.invalid && workoutForm.get('workoutType')?.touched}">
+            <option value="" disabled>Select type</option>
+            <option value="Cycling">Cycling</option>
+            <option value="Running">Running</option>
+            <option value="Swimming">Swimming</option>
+            <option value="Yoga">Yoga</option>
+          </select>
+          <div class="error-message" 
+               *ngIf="workoutForm.get('workoutType')?.invalid && workoutForm.get('workoutType')?.touched">
+            <span *ngIf="workoutForm.get('workoutType')?.errors?.['required']">Workout type is required</span>
+            <span *ngIf="workoutForm.get('workoutType')?.errors?.['invalidWorkoutType']">Invalid workout type</span>
+          </div>
+        </div>
+  
+        <div class="form-field">
+          <label>Workout Minutes*</label>
+          <input type="number" 
+                 formControlName="workoutMinutes" 
+                 placeholder="60"
+                 [ngClass]="{'error': workoutForm.get('workoutMinutes')?.invalid && workoutForm.get('workoutMinutes')?.touched}">
+          <div class="error-message" 
+               *ngIf="workoutForm.get('workoutMinutes')?.invalid && workoutForm.get('workoutMinutes')?.touched">
+            <span *ngIf="workoutForm.get('workoutMinutes')?.errors?.['required']">Duration is required</span>
+            <span *ngIf="workoutForm.get('workoutMinutes')?.errors?.['positiveNumber']">Duration must be greater than 0</span>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-errors" *ngIf="formErrors.length > 0">
+        <div class="error-message" *ngFor="let error of formErrors" [@fadeInOut]>
+          {{ error }}
+        </div>
+      </div>
+  
+      <button type="submit" 
+              class="primary">Add Workout</button>
+    </form>
+  </div>
